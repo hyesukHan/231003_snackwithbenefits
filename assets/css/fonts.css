@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+@font-face {
+    font-family: 'TT Trailers';
+    src: url(../fonts/TT\ Trailers\ Trial\ Light.woff2) format('woff2');
+    font-weight: 300;
+}
+@font-face {
+    font-family: 'TT Trailers';
+    src: url(../fonts/TT\ Trailers\ Trial\ Regular.woff2) format('woff2');
+    font-weight: 400;
+}
+@font-face {
+    font-family: 'TT Trailers';
+    src: url(../fonts/TT\ Trailers\ Trial\ Medium.woff2) format('woff2');
+    font-weight: 500;
+}
+@font-face {
+    font-family: 'TT Trailers';
+    src: url(../fonts/TT\ Trailers\ Trial\ DemiBold.woff2) format('woff2');
+    font-weight: 600;
+}
+@font-face {
+    font-family: 'TT Trailers';
+    src: url(../fonts/TT\ Trailers\ ExtraBold.woff2) format('woff2');
+    font-weight: 700;
+}
+
+@font-face {
+    font-family: 'Atomicmarker';
+    src: url(../fonts/63775fae25cdcb4f0a480ef5_AtomicMarker.woff) format('woff');
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: 'Atomicmarkerextras';
+    src: url(../fonts/637c791f84d07f78fcd418e3_AtomicMarkerExtras.woff) format('woff');
+    font-weight: 400;
+}
+

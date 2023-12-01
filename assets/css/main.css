@@ -1,0 +1,1395 @@
+.intro {
+    display: block;
+    z-index: 700;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: #101820;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+.intro.hide{
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.5s 1s;
+}
+.intro .group-marquee .marquee {
+    display: flex;
+    white-space: nowrap;
+    overflow: hidden;
+    
+}
+.intro .group-marquee .marquee .text {
+    color: #ff8200;
+    text-transform: uppercase;
+    font-family: "TT Trailers", sans-serif;
+    font-size: 240rem;
+    font-weight: 700;
+    line-height: 90%;
+    transition: 0.3s;
+    margin-left:24rem;
+    height: 180rem;
+    margin-bottom: 16rem;
+    padding-top: 12rem;
+    
+}
+.intro .group-marquee .marquee.left .text {
+    animation: textLoop_left 40s linear infinite;
+}
+.intro .group-marquee .marquee.right .text {
+    animation: textLoop_right 40s linear infinite;
+}
+
+@keyframes textLoop_left {
+    0% {
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+    }
+    100% {
+        -webkit-transform: translate3d(-100%, 0, 0);
+        transform: translate3d(-100%, 0, 0);
+    }
+}
+@keyframes textLoop_right {
+    0% {
+        -webkit-transform: translate3d(-100%, 0, 0);
+        transform: translate3d(-100%, 0, 0);
+    }
+    100% {
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+.intro.hide .group-marquee .wrap{
+   transform: translateX(-100%);
+   transition: 1s;
+}
+.intro.hide .group-marquee .wrap:nth-child(even){
+    transform: translateX(100%);
+}
+
+.intro .loader{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.intro.hide .loader{
+    transform: translate(-50%,-50%) scale(0);
+    transition: 1s;
+}
+.loader-wrapper #lottie_1{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 550rem;
+    height: 550rem;
+}
+.loader-wrapper .symbol{
+    position: relative;
+    z-index: 10;
+    width: 550rem;
+    height: 550rem;
+    animation: rotate 30s linear infinite;
+}
+.loader-wrapper .symbol.on{
+    animation: scaledown 0.3s linear forwards;
+}
+@keyframes rotate {
+    0%{
+        transform: rotate(0);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+.intro .loader.on{
+    animation: scaledown1 0.5s linear forwards;
+}
+.intro .loader .link-main{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotateZ(-6deg);
+    z-index: 100;
+    width: 160rem;
+    height: 140rem;
+    transition: 0.3s;
+}
+.intro .loader .link-main:hover{
+    transform: translate(-50%, -50%) rotateZ(6deg) scale(1.1);
+}
+.intro .loader .link-main.on{
+    animation: scaledown1 0.3s linear forwards;
+}
+@keyframes scaledown {
+    0%{
+        transform: scale(1);
+    }
+    100%{
+        transform: scale(0);
+    }
+}
+@keyframes scaledown1 {
+    0%{
+        transform:  translate(-50%, -50%) scale(1);
+        
+    }
+    100%{
+        transform:  translate(-50%, -50%) scale(0);
+    }
+}
+
+.intro .loader .link-main .btn-click{
+    background: url(../images/intro/triangle--pink.svg) no-repeat center center ;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    gap: 10rem;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    padding-bottom: 28rem;
+}
+.intro .loader .link-main .btn-click .arrow{
+    width: 24rem;
+}
+.intro .loader .link-main .desc{
+    text-transform: uppercase;
+    font-family: "TT Trailers", sans-serif;
+    font-size: 24rem;
+    font-weight: 700;
+    line-height: 80%;
+    color: #000;
+}
+
+.sc-title{
+    position: relative;
+    height: 110vh;
+}
+.sc-title .btn-tab-area{
+    z-index: 300;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 16rem;
+    position: absolute;
+    top: 150rem;
+    width: 100%;
+}
+.sc-title .btn-tab-area button{
+    border: 2rem solid rgba(255,255,255,.2);
+    border-radius: 20px;
+    padding: 6rem 10rem;
+    text-transform: uppercase;
+    font-family: 'Inter',sans-serif;
+    font-size: 16rem;
+    font-weight: 600;
+    line-height: 120%;
+    transition: 0.2s;
+    backdrop-filter: blur(10rem);
+}
+.sc-title .btn-tab-area button.on,.sc-title .btn-tab-area button:hover{
+    border-color: #f7f33a;
+}
+
+.sc-title .headline-area{
+    position: absolute;
+    bottom: 15vh;
+    width: 100%;
+    text-align: center;
+}
+.sc-title .headline-area .headline{
+    display: flex;
+    flex-direction: column;
+    text-transform: uppercase;
+    font-family: 'Tt trailers',sans-serif;
+}
+.sc-title .headline-area .headline span:nth-child(1){
+    font-size: 11vw;
+    font-weight: 700;
+    line-height: 75%;
+    margin-top: 16rem;
+}
+.sc-title .headline-area .headline span:nth-child(2){
+    font-size: 14.2vw;
+    font-weight: 700;
+    line-height: 75%;
+    margin: 16rem 0;
+}
+.sc-title .headline-area .text{
+    position: absolute;
+    bottom: 17.5vw;
+    right: 14.5vw;
+    transform: rotate(9deg);
+    font-size: clamp(32rem, 3.4vw, 72rem);
+    line-height: 100%;
+    font-family: 'Atomicmarker',sans-serif;
+    color: #FF585D;
+}
+.sc-title .headline-area .btn-wrap{
+    width: 200rem;
+    height: 200rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    bottom: 9.3vw;
+    left: 20.5vw;
+}
+.sc-title .headline-area .btn-go{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 10rem;
+    justify-content: flex-end;
+    align-items: center;
+    padding-bottom: 20rem;
+    height: 140rem;
+    width: 160rem;
+    transform: rotateZ(-6deg) scale(1);
+    transition: 0.3s;
+}
+.sc-title .headline-area .btn-go:hover{
+    transform: rotate(0) scale(1.1);
+}
+.sc-title .headline-area .btn-go .bg-svg{
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 140rem;
+    width: 160rem;
+
+}
+.sc-title .headline-area .btn-go img{
+    position: relative;
+    z-index: 10;
+}
+.sc-title .headline-area .btn-go span{
+    color: #101820;
+    position: relative;
+    z-index: 10;
+    text-transform: uppercase;
+    font-family: 'Tt trailers',sans-serif;
+    font-size: 24rem;
+    font-weight: 700;
+    line-height: 80%;
+}
+.sc-title .group-snack{
+    z-index: 100;
+    position: relative;
+    width: 100vw;
+    height: 110vh;
+    display: flex;
+    justify-content: space-between;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.sc-title .group-snack [data-snack="2"],
+.sc-title .group-snack [data-snack="3"]{
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    width: 100%;
+    height: auto;
+}
+.sc-title .group-snack img{
+    visibility: hidden;
+}
+.sc-title .group-snack img.on{
+    visibility: visible;
+}
+.sc-title .group-snack [class*="snack"]{
+    width: 12vw;
+    position: relative;
+}
+.sc-title .group-snack [class*="snack"] span{
+    transform: translateY(-100%);
+    position: absolute;
+    top: 0;
+}
+.sc-title .group-snack img{
+    width: 12vw;
+    height: 12vw;
+}
+.sc-title .group-snack .bg-gradient{
+    z-index: 700;
+    width: 100%;
+    height: 20vh;
+    background-image: linear-gradient(rgba(16,24,32,0),#101820 80%);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+.sc-intro .group-img{
+    width: 100%;
+    display: flex;
+    margin-bottom: -112rem;
+}
+.sc-intro .group-img .img-container{
+    flex: 1;
+    height: 60vh;
+    overflow: hidden;
+}
+.sc-intro .group-img .img-container img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: scale(1.2);
+}
+
+.sc-intro .group-bottom{
+    display: flex;
+    margin-bottom: -200rem;
+}
+.sc-intro .group-bottom .bg-img{
+    flex: 1;
+}
+.sc-intro .group-bottom .bg-img img{
+    width: 80%;
+    transform: rotate(1.42062deg);
+    transform-origin: left center;
+}
+.sc-intro .group-bottom .text-area{
+    flex: 1;
+
+}
+.sc-intro .group-bottom .text-area .headline{
+    font-family: 'Tt trailers',sans-serif;
+    text-transform: uppercase;
+    font-size: 160rem;
+    font-weight: 700;
+    line-height: 80%;
+    margin-bottom: 32rem;
+}
+.sc-intro .group-bottom .text-area .desc{
+    max-width: 480rem;
+    font-size: 20rem;
+    color: rgba(255,255,255,.7);
+    line-height: 160%;
+}
+
+.sc-story{
+    position: relative;
+    margin-bottom: 540rem;
+}
+.sc-story .marquee-wrapper{
+    position: sticky;
+    top: 5vw;
+    left: 0;
+    overflow: hidden;
+
+    transform: rotate(-3deg);
+}
+.sc-story .marquee-area{
+    margin-top: 25vh;
+    margin-bottom: auto;
+    display: flex;
+    align-items: center;
+}
+.sc-story .marquee-area .wrap{
+    display: flex;
+    flex-shrink: 0;
+    animation: rollingleft1 40s linear infinite;
+}
+.sc-story .marquee-area .headline{ 
+    flex-shrink: 0;
+    -webkit-text-stroke: 1rem #FF585D;
+    color: transparent;
+    font-size: 17vw;
+    text-transform: uppercase;
+    font-family: 'Tt trailers', sans-serif;
+    font-weight: 700;
+    opacity: 0.3;
+}
+
+@keyframes rollingleft1 {
+    0% { transform: translateX(0); }
+	100% { transform: translateX(-100%); }
+}
+.sc-story .inner{
+    padding: 0 6vw;
+}
+.sc-story .inner2{
+    max-width: 1280rem;
+    margin: 0 auto;
+}
+.sc-story .text-area{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.sc-story .text-area .title-area{
+    position: relative;
+}
+.sc-story .text-area .title{
+    text-transform: uppercase;
+    line-height: 75%;
+    font-size: clamp(200rem, 20vw, 270rem);
+    font-family: 'Tt trailers',sans-serif;
+    font-weight: 700;
+    margin-bottom: 48rem;
+}
+.sc-story .text-area .desc{
+    max-width: 720rem;
+    color: rgba(255,255,255,.7);
+    font-family: 'Inter',sans-serif;
+    font-size: 16rem;
+    line-height: 160%;
+    margin-bottom: 48rem;
+}
+.sc-story .text-area .deco{
+    margin-bottom: 56rem;
+    font-family: 'Atomicmarker',sans-serif;
+    font-size: 40rem;
+    line-height: 100%;
+    color: #ff585d;
+}
+.sc-story .text-area .deco2{
+    position: absolute;
+    top: -150rem;
+    left: -100rem;
+    transform: rotate(-8deg);
+    font-family: 'Atomicmarker',sans-serif;
+    font-size: 40rem;
+    line-height: 100%;
+    color: #c4d600;
+}
+.sc-story .bg-right{
+    position: absolute;
+    top: 30vh;
+    right: 0;
+}
+.sc-story .bg-right img{
+    width: 20vw;
+    transform: rotate(0);
+    transform-origin: right center;
+}
+.sc-story .bg-left{
+    z-index: -1;
+    position: absolute;
+    top:600rem;
+    left: 0;
+}
+.sc-story .bg-left img{
+    width: 30vw;
+    transform:  rotateZ(-8.169deg);
+    transform: rotate(0);
+    transform-origin: left center;
+}
+
+.sc-story .video-container{
+    position: relative;
+    width: 100%;
+    overflow:hidden;
+}
+.sc-story .video-container img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: scale(1.2);
+}
+.sc-story .video-container .btn-play{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-6deg);
+    width: 160rem;
+    height: 140rem;
+    cursor: pointer;
+    background: url(../images/sc-story/triangle--yellow.svg) ;
+    background-size: 160rem;
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column;
+    align-items: center;
+    gap: 10rem;
+    padding-bottom: 20rem;
+    transition: 0.3s;
+    transform-origin: center center;
+}
+.sc-story .video-container .btn-play:hover{
+    transform: scale(1.1) translate(-50%, -50%) rotate(0deg);
+}
+.sc-story .video-container .icon{
+    display: block;
+    width: 32rem;
+    height: 32rem;
+    background: url(../images/sc-story/play-btn.svg);
+}
+.sc-story .video-container .text{
+    display: block;
+    color: #101820;
+    text-transform: uppercase;
+    font-family: 'Tt trailers',sans-serif;
+    font-size: 24rem;
+    font-weight: 700;
+    line-height: 80%;
+}
+.sc-story .group-content{
+    padding: 192rem 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 16vw;
+    grid-row-gap: 192rem
+}
+.sc-story .group-content .content.left{
+    position: relative;
+    top: 600rem
+}
+.sc-story .group-content .content .img-container{
+    width: 100%;
+    height: 600rem;
+    position: relative;
+}
+.sc-story .group-content .content .img-container .img-wrap{
+    width: 100%;
+    height: 100%;
+    overflow:hidden
+}
+.sc-story .group-content .content .img-container img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: scale(1.2);
+}
+.sc-story .group-content .content .img-container .deco{
+    display: block;
+    width: 200rem;
+    height: 200rem;
+    position: absolute;
+    top: -9%;
+    right: -11%;
+}
+.sc-story .group-content .content .img-container .deco.star{
+    background: url(../images/sc-story/star-img.svg) no-repeat center center /contain;
+}
+.sc-story .group-content .content .img-container .deco.light{
+    background: url(../images/sc-story/lightning-img.svg) no-repeat center center /contain;
+}
+.sc-story .group-content .content .img-container .deco.heart{
+    background: url(../images/sc-story/heart-img.svg) no-repeat center center /contain;
+}
+.sc-story .group-content .content .img-container .deco.earth{
+    background: url(../images/sc-story/earth.svg) no-repeat center center /contain;
+}
+.sc-story .group-content .content .text-area{
+    display: block;
+    position: relative;
+    top: -81.2rem;
+    left: -4rem;
+    text-align: left;
+}
+.sc-story .group-content .content .text-area .title{
+    text-transform: uppercase;
+    margin-top: 0;
+    margin-bottom: 24rem;
+    font-family: Tt trailers,sans-serif;
+    font-size: 120rem;
+    font-weight: 700;
+    line-height: 75%;
+}
+.sc-story .group-content .content .text-area .desc{
+    max-width: 320rem;
+    color: rgba(255,255,255,.7);
+    margin-bottom: 0;
+    font-family: Inter,sans-serif;
+    font-size: 16rem;
+    font-weight: 400;
+    line-height: 160%;
+}
+
+.sect-horizontal{
+    position: relative;
+    height: 600vh;
+    display: flex;
+}
+.sect-horizontal .sticky{
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    display: flex;
+    overflow: hidden;
+}
+.sect-horizontal .sticky .wrap{
+    display: flex;
+    flex-shrink: 0;
+}
+.sect-horizontal .sticky .wrap > *{
+    flex-shrink: 0;
+    position: relative;
+}
+.sect-horizontal .headline-area{
+    position: relative;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.sect-horizontal .headline{
+    text-align: center;
+    font-size: clamp(200rem, 20vw, 270rem);
+    line-height: 75%;
+    text-transform: uppercase;
+    font-family: 'Tt trailers',sans-serif;
+    font-weight: 700;
+}
+.sect-horizontal .headline-area .star{
+    z-index: -1;
+    position: absolute;
+    top: 100px;
+    left: 25%;
+    font-family: 'Atomicmarkerextras',sans-serif;
+    font-size: 172rem;
+    font-weight: 400;
+    line-height: 100%;
+    color: #f7f33a;
+}
+.sect-horizontal .headline-area .text{
+    position: absolute;
+    top: 280px;
+    left: 24%;
+    font-family: 'Atomicmarker',sans-serif;
+    font-size: 72rem;
+    font-weight: 400;
+    line-height: 100%;
+    text-transform: uppercase;
+    transform: rotate(9deg);
+    color: #ff585d;
+    text-align: center;
+}
+.sect-horizontal .img-container{
+    width: 50vw;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+.sect-horizontal .img-container.hand{
+    transform: translateY(50px);
+}
+.sect-horizontal .img-container.up{
+    align-items: flex-start;
+    transform: translateY(-60px);
+}
+.sect-horizontal .img-container img{
+    height: 88vh;
+}
+.sect-horizontal .content{
+    width: 75vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.sect-horizontal .content .top-area{
+    position: relative;
+}
+.sect-horizontal .content .top-area .left{
+    position: absolute;
+    top: 0;
+    left: -100rem;
+    transform: rotate(180deg);
+    width: 150rem;
+}
+.sect-horizontal .content .top-area .right{
+    width: 150rem;
+    position: absolute;
+    bottom: -24rem;
+    right: -50rem;
+    transform: rotateZ(-14.9847deg);
+}
+.sect-horizontal .content .top-area .btn-go{
+    width: 180rem;
+    height: 180rem;
+    gap: 10rem;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    padding-bottom: 40rem;
+    display: flex;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-5deg);
+    background: url(../images/sc-horizontal/triangle--green.svg)no-repeat center center /contain;
+    transition: 0.2s;
+}
+.sect-horizontal .content .top-area .btn-go:hover{
+    transform: scale(1.1)  translate(-50%, -50%) rotate(5deg);
+}
+.sect-horizontal .content .top-area .btn-go .arrow{
+    width: 24rem;
+    height: 24rem;
+    background: url(../images/sc-horizontal/arrow--right.svg) no-repeat center center /contain;
+}
+.sect-horizontal .content .top-area .btn-go .text{
+    text-align: center;
+    text-transform: uppercase;
+    font-family: Tt trailers,sans-serif;
+    font-size: 24rem;
+    font-weight: 700;
+    line-height: 80%;
+    color: #101820;
+}
+.sect-horizontal .content .desc{
+    max-width: 720rem;
+    text-align: center;
+    margin-top: 60rem;
+    text-transform: uppercase;
+    font-family: Inter,sans-serif;
+    font-size: 20rem;
+    font-weight: 600;
+    line-height: 140%;
+}
+.sect-horizontal .funghi .top-area .btn-go{
+    background: url(../images/sc-horizontal/triangle--pink.svg) no-repeat center center /contain;
+}
+.sect-horizontal .funghi .top-area .center-img{
+    max-height: 55vh;
+}
+.sect-horizontal .funghi .top-area .left{
+    top: 43rem;
+    left: -120rem;
+    transform: rotateZ(-7.4691deg);
+}
+.sect-horizontal .funghi .top-area .right{
+    transform:rotateZ(0.03296deg);
+    width: 200rem;
+    bottom: 32.4rem;
+    right: -16.1rem;
+}
+.sect-horizontal .funghi .btn-go{
+    margin-top: -50rem;
+}
+.sect-horizontal .ribs{
+    width: 100vw;
+}
+.sect-horizontal .ribs .top-area .btn-go{
+    background: url(../images/sc-horizontal/triangle--yellow.svg)no-repeat center center /contain;
+}
+.sect-horizontal .ribs .top-area .left{
+    position: absolute;
+    width: 60rem;
+    height: 47rem;
+    position: absolute;
+    top: -24rem;
+    left: 0%;
+}
+.sect-horizontal .ribs .top-area .right{
+    width: 57rem;
+    height: 44rem;
+    position: absolute;
+    bottom: -27rem;
+    right: 20rem;
+    transform: rotate(90deg);
+}
+.sect-horizontal .ribs .top-area .bottom{
+    width: 48rem;
+    height: 56rem;
+    position: absolute;
+    bottom: -40rem;
+    left: 22rem;
+    transform: rotate(-3deg);
+}
+.sect-horizontal .ribs .top-area .top{
+    width: 52rem;
+    height: 52rem;
+    position: absolute;
+    top: -80rem;
+    right: 80rem;
+    transform: rotate(-90deg);
+}
+.sect-horizontal .ribs .top-area .bottom-ribs{
+    width: 400rem;
+    position: absolute;
+    bottom: 5%;
+    left: 120rem;
+}
+.sc-move{
+    width: 100%;
+    padding: 192rem 0;
+    position: relative;
+    overflow: hidden;
+}
+.sc-move .headline-area{
+    position: relative;
+    margin-bottom: 48rem;
+}
+.sc-move .headline-area .headline{
+    text-align: center;
+    text-transform: uppercase;
+    font-family: 'Tt trailers',sans-serif;
+    font-size: clamp(200rem, 20vw, 270rem);
+    line-height: 75%;
+    font-weight: 700;
+}
+.sc-move .headline-area .deco{
+    position: absolute;
+    top: -150px;
+    right: calc(50% + 200px );
+    font-size: clamp(32rem, 3.4vw, 72rem);
+    font-family: 'Atomicmarker',sans-serif;
+    font-weight: 400;
+    line-height: 100%;
+    transform: rotate(-9deg);
+    color: #c4d600;
+}
+.sc-move .btn-contact{
+    display: block;
+    height: 56rem;
+    padding: 0 24rem;
+    background-color: #f7f33a;
+    color: #000;
+    font-family: 'Inter',sans-serif;
+    font-weight: 600;;
+    border-radius: 100vw;
+    text-transform: uppercase;
+    white-space: pre;
+    font-size: 14rem;
+    line-height: 1.4;
+    margin: 0 auto;
+    margin-bottom: 192rem;
+}
+.sc-move .bg-img{
+    transform: rotate(0) ;
+    position: absolute;
+    top: 192rem;
+    bottom: 0%;
+    right: -5%;
+    width: 30vw;
+    transform-origin: right center;
+}
+.sc-move .inner{
+    width: 100%;
+    padding-left: 6vw;
+    padding-right: 6vw;
+}
+.sc-move .slide-area{
+    width: 100%;
+    max-width: 1280rem;
+    margin-left: auto;
+    margin-right: auto;
+    background: #fff;
+    color: #000;
+    padding: 48rem 0 48rem 48rem;
+    display: flex;
+    align-items: center;
+    font-size: 24rem;
+}
+.sc-move .slide-area .slide-title{
+    width: 100%;
+    max-width: 240rem;
+}
+.sc-move .slide-title .title{
+    text-transform: uppercase;
+    margin-top: 0;
+    margin-bottom: 0;
+    font-family: 'Tt trailers',sans-serif;
+    font-size: 56rem;
+    font-weight: 700;
+    line-height: 75%;
+    margin-bottom: 32rem;
+}
+.sc-move .slide-title .btn-parter{
+    color: #fff;
+    background-color: #101820;
+    height: 56rem;
+    border-radius: 100rem;
+    padding-left: 24rem;
+    padding-right: 24rem;
+    display: flex;
+    align-items: center;
+    text-transform: uppercase;
+    font-size: 14rem;
+    font-family: 'Inter',sans-serif;
+    font-weight: 600;
+}
+.sc-move .slide-area .swiper{
+    width: 100%;
+    position: relative;
+}
+.sc-move .slide-area .swiper .swiper-wrapper{
+    transition-timing-function: linear;
+}
+.sc-move .slide-area .swiper .swiper-wrapper .swiper-slide{
+    height: 128rem;
+    width: 250rem;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.sc-move .slide-area .swiper .swiper-wrapper .swiper-slide img{
+    object-fit: contain;
+    max-height: 70%;
+    max-width: 60%;
+    display: flex;
+    justify-content: center;align-items: center;
+}
+.sc-move .slide-area .swiper .swiper-gradient{
+    z-index: 100;
+    position: absolute;
+    width: 100rem;
+    height: 100%;
+    background-image: linear-gradient(90deg,#fff,rgba(255,255,255,0));
+    top: 0;
+    left: 0;
+
+}
+.sc-geloof{
+    width: 100%;
+    padding: 0 0 192rem 0;
+}
+.sc-geloof .inner{
+    position: relative;
+    display: flex;
+}
+.sc-geloof .top .swiper-wrap{
+    position: relative;
+    width: 50%;
+}
+
+.sc-geloof .top .swiper-wrap .swiper .img-container{
+    position: relative;
+}
+.sc-geloof .top .swiper-wrap .swiper .img-container .name-tag{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-color: #101820;
+    padding-top: 16rem;
+    padding-left: 0;
+    padding-right: 16rem;
+    text-transform: uppercase;
+    font-family: Tt trailers,sans-serif;
+    font-size: 56rem;
+    font-weight: 700;
+    line-height: 75%;
+}
+.sc-geloof .top .swiper-wrap .swiper .swiper-slide .desc{
+    padding-top: 24rem;
+    font-size: 20rem;
+}
+.sc-geloof .top .swiper-wrap .swiper .swiper-slide img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.sc-geloof .inner .control{
+    display: flex;
+    gap: 8rem;
+}
+.sc-geloof .inner .control .btn-next,.sc-geloof .inner .control .btn-prev{
+    width: 40rem;
+    height: 40rem;
+    cursor: pointer;
+    border: 1px solid #c4d600;
+    border-radius: 100vw;
+    justify-content: center;
+    align-items: center;
+    transition: all .2s;
+    display: flex;
+}
+.sc-geloof .inner .control .btn-prev:after{
+    content: '';
+    display: block;
+    width: 20rem;
+    height: 20rem;
+    background: url(../images/sc-geloof/arrow--green.svg) no-repeat center center /contain;
+    transform: rotate(-180deg);
+}
+.sc-geloof .inner .control .btn-next:after{
+    content: '';
+    display: block;
+    width: 20rem;
+    height: 20rem;
+    background: url(../images/sc-geloof/arrow--green.svg)  no-repeat center center /contain;
+}
+.sc-geloof .inner .headline-wrap{
+    flex: 1;
+    display: flex;
+    flex-direction: row-reverse;
+}
+.sc-geloof .inner .headline-area{
+    display: flex;
+    width: 645px;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.sc-geloof .inner .headline-area .headline{
+    font-size: 160rem;
+    font-weight: 700;
+    line-height: 80%;
+    text-transform: uppercase;
+    font-family: 'Tt trailers', sans-serif;
+}
+.sc-geloof .inner .headline-area .deco{
+    font-size: clamp(32rem, 3.4vw, 72rem);
+    font-family: Atomicmarker,sans-serif;
+    line-height: 100%;
+    transform:rotate(-9deg);
+    color: #c4d600;
+    margin-bottom: 45rem;
+}
+.sc-geloof .bottom{
+    justify-content: center;
+}
+.sc-geloof .slide-area .swiper .swiper-wrapper{
+    transition-timing-function: linear;
+}
+.sc-geloof .slide-area{
+    width: 100%;
+    max-width: 1280rem;
+    margin-left: auto;
+    margin-right: auto;
+    background: #fff;
+    color: #000;
+    padding: 48rem 0 48rem 48rem;
+    display: flex;
+    align-items: center;
+    font: 24rem;
+    margin : 192rem 0;
+}
+.sc-geloof .slide-area .slide-title{
+    width: 100%;
+    max-width: 320rem;
+}
+.sc-geloof .slide-title .title{
+    text-transform: uppercase;
+    margin-top: 0;
+    margin-bottom: 0;
+    font-family: 'Tt trailers',sans-serif;
+    font-size: 56rem;
+    font-weight: 700;
+    line-height: 75%;
+    margin-bottom: 32rem;
+}
+.sc-geloof .slide-title .desc{
+    color: #101820;
+    font-family: 'Inter',sans-serif;
+    font-size: 16rem;
+    font-weight: 400;
+    line-height: 160%;
+}
+.sc-geloof .slide-area .swiper{
+    width: 100%;
+    position: relative;
+}
+.sc-geloof .slide-area .swiper .swiper-wrapper{
+    transition-timing-function: linear;
+}
+.sc-geloof .slide-area .swiper .swiper-wrapper .swiper-slide{
+    height: 128rem;
+    display: flex;
+    align-items: center;
+    width: 250rem;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.sc-geloof .slide-area .swiper .swiper-wrapper .swiper-slide img{
+    object-fit: contain;
+    max-height: 70%;
+    max-width: 60%;
+    display: flex;
+    justify-content: center;align-items: center;
+}
+.sc-geloof .slide-area .swiper .swiper-gradient{
+    z-index: 100;
+    position: absolute;
+    width: 100rem;
+    height: 100%;
+    background-image: linear-gradient(90deg,#fff,rgba(255,255,255,0));
+    top: 0;
+    left: 0;
+
+}
+
+.sc-night{
+    padding: 0 6vw;
+}
+.sc-night .inner{
+    width: 100%;
+    max-width: 1280rem;
+    margin: 0 auto;
+    display: flex;
+}
+.sc-night .inner .left-area{
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+.sc-night .inner .left-area .text{
+    color: #c4d600;
+    font-family: Atomicmarker,sans-serif;
+    font-size: 200rem;
+    font-weight: 400;
+    line-height: 90%;
+    transform: rotate(-9deg);
+}
+.sc-night .inner .left-area .text span{
+    font-family: Atomicmarkerextras,sans-serif;
+    font-weight: 400;
+}
+.sc-night .inner .right-area{
+    flex: 1;
+    position: relative;
+}
+.sc-night .inner .right-area img{
+    width: 140rem;
+    position: absolute;
+    top: -72rem;
+    left: 336.2rem;
+}
+.sc-night .inner .right-area .headline{
+    font-size: clamp(200rem, 20vw, 270rem);
+    line-height: 75%;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-family: Tt trailers,sans-serif;
+}
+.sc-night .inner .right-area .deco{
+    position: absolute;
+    top: 400rem;
+    left: 340rem;
+    color: #ff8200;
+    font-family: Atomicmarker,sans-serif;
+    color: #ff8200;
+    font-size: clamp(32rem, 3.4vw, 72rem);
+    rotate: -9deg;
+}
+.sc-night .inner .right-area .desc{
+    width: 100%;
+    max-width: 320rem;
+    color: rgba(255,255,255,.7);
+    font-family: Inter,sans-serif;
+    font-size: 16rem;
+    font-weight: 400;
+    line-height: 160%;
+    margin-bottom: 32rem;
+}
+.sc-night .inner .right-area .spotify{
+    border-radius: 12px;
+}
+
+.sc-follow{
+    padding: 0 6vw;
+    margin-top: 96rem;
+}
+.sc-follow .inner{
+    width: 100%;
+    max-width: 1280rem;
+    margin: 0 auto;
+    display: flex;
+}
+.sc-follow .inner .left-area{
+    flex: 1;
+    position: relative;
+}
+.sc-follow .inner .left-area .headline{
+    max-width: 640rem;
+    font-size: clamp(200rem, 20vw, 270rem);
+    line-height: 75%;
+    text-transform: uppercase;
+    font-family: Tt trailers,sans-serif;
+    font-weight: 700;
+    margin-bottom: 32rem;
+}
+.sc-follow .inner .left-area .deco{
+    position: absolute;
+    top: 220rem;
+    left: 339.6rem;
+    font-size: clamp(32rem, 3.4vw, 72rem);
+    font-family: Atomicmarker,sans-serif;
+    font-weight: 400;
+    line-height: 100%;
+    transform: rotate(-9deg);
+    color: #f7f33a;
+    text-transform: uppercase;
+}
+.sc-follow .inner .left-area .btn-insta{
+    height: 40rem;
+    color: #fff;
+    background-color: rgba(16,24,32,0);
+    border-radius: 100rem;
+    padding-left: 16rem;
+    padding-right: 16rem;
+    position: relative;
+    overflow: hidden;
+    text-transform: uppercase;
+    font-size: 14rem;
+    line-height: 1.4;
+    border: 2rem solid #f7f33a;
+    border-radius: 100rem
+}
+.sc-follow .inner .left-area .btn-insta .text{
+    display: flex;
+    gap: 10rem;
+    justify-content: center;
+    align-items: center;
+}
+.sc-follow .inner .left-area .btn-insta .icon{
+    display: block;
+    width: 24rem;
+    height: 24rem;
+    background: url(../images/icon-instagram.svg)no-repeat center center /contain;
+}
+.sc-follow .inner .left-area .btn-insta [class*='bg']{
+    z-index: -1;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    width: 200rem;
+    height: 120rem;
+    border-radius: 100rem;
+}
+.sc-follow .inner .left-area .btn-insta .bg-green{
+    background: #c4d600;
+    transition: 0.1s 0.5s;
+}
+.sc-follow .inner .left-area .btn-insta .bg-yellow{
+    background: #f7f33a;
+    transition: 0.1s 0.4s;
+}
+.sc-follow .inner .left-area .btn-insta .bg-pink{
+    background: #FF585D;
+    transition: 0.1s 0.3s;
+}
+.sc-follow .inner .left-area .btn-insta:hover .bg-green{
+    transition: 0.1s;
+    transform: translate(-50%, -50%) scale(1);
+}
+.sc-follow .inner .left-area .btn-insta:hover .bg-yellow{
+    transition: 0.1s 0.1s;
+    transform: translate(-50%, -50%) scale(1);
+}
+.sc-follow .inner .left-area .btn-insta:hover .bg-pink{
+   transition: 0.1s 0.2s;
+   transform: translate(-50%, -50%) scale(1);
+}
+.sc-follow .img-wrap{
+    flex: 1;
+    position: relative;
+    height: 600rem;
+}
+.sc-follow .img-wrap .img-container{
+    width: 325rem;
+    height: 340rem;
+    overflow: hidden;
+}
+.sc-follow .img-wrap .img-container.top{
+    position: absolute;
+    top: 0%;
+    left: 0%;
+}
+.sc-follow .img-wrap .img-container.bottom{
+    position: absolute;
+    bottom: 0%;
+    right: 0%;
+}
+.sc-follow .img-wrap .img-container img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: scale(1.2);
+}
+.sc-follow .img-wrap .icon{
+    display: block;
+    width: 100rem;
+    height: 120rem;
+    position: absolute;
+    top: 300rem;
+    left: 56rem;
+    background: url(../images/fryday.svg) no-repeat center center /contain;
+}
+.sc-faq{
+    padding: 192rem 6vw;
+}
+.sc-faq .inner{
+    width: 100%;
+    max-width: 1280rem;
+    margin: 0 auto;
+}
+.sc-faq .inner .headline{
+    font-size: 120rem;
+    line-height: 90%;
+    text-transform: uppercase;
+    font-family: Tt trailers,sans-serif;
+    font-weight: 700;
+    margin-bottom: 32rem;
+}
+.sc-faq .inner .faq-list .faq-item:first-child{
+    border-top: 2px solid #fff;
+}
+.sc-faq .inner .faq-list .faq-item{
+    border-bottom: 2px solid #fff;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+}
+.sc-faq .inner .faq-list .faq-item .question-area{
+    display: flex;
+    padding-top: 24rem;
+    padding-bottom: 24rem;
+    justify-content: space-between;
+    align-items: center;
+}
+.sc-faq .inner .faq-list .faq-item .question-area .question{
+    font-size: 32rem;
+    font-weight: 600;
+    line-height: 120%;
+}
+.sc-faq .inner .faq-list .faq-item .question-area .btn-view-more{
+    width: 40rem;
+    height: 40rem;
+    border: 1px solid rgba(255,255,255,.2);
+    border-radius: 100vw;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    position: relative;
+    transition: 0.3s;
+}
+.sc-faq .inner .faq-list .faq-item .question-area:hover .btn-view-more{
+    border: 1px solid rgba(255,255,255,1);
+}
+.sc-faq .inner .faq-list .faq-item .question-area .btn-view-more [class*=line]{
+    display: inline-block;
+    width: 16px;
+    height: 2px;
+    background-color: #fff;
+}
+.sc-faq .inner .faq-list .faq-item .question-area .btn-view-more .h-line{
+    position: absolute;
+    rotate: 90deg;
+    transition: 0.3s;
+}
+.sc-faq .inner .faq-list .faq-item .question-area.on .btn-view-more .h-line{
+    rotate: 180deg;
+}
+.sc-faq .inner .faq-list .faq-item .answer{
+    margin-bottom: 0;
+    font-family: Inter,sans-serif;
+    font-size: 16rem;
+    font-weight: 400;
+    line-height: 160%;
+    color: rgba(255,255,255,.7);
+    width: 100%;
+    max-width: 960rem;
+    display: none;
+    overflow: hidden;
+    padding-bottom: 24rem;
+}
