@@ -1,3 +1,5 @@
+//부드러운 스크롤을 위한 lenis
+
 const lenis = new Lenis()
 
 lenis.on('scroll', ScrollTrigger.update)
@@ -8,6 +10,7 @@ gsap.ticker.add((time)=>{
 
 gsap.ticker.lagSmoothing(0)
 
+//메뉴버튼
 
 $('.header .gnb .btn-menu').click(function(){
     $('.header .menu-wrap').addClass('on');
@@ -17,6 +20,7 @@ $('.header .gnb .btn-menu').click(function(){
 
 })
 
+//intro lottie 애니메이션
 
 var animation1 = bodymovin.loadAnimation({
     container: $('#lottie_1')[0], 
@@ -25,6 +29,8 @@ var animation1 = bodymovin.loadAnimation({
     autoplay: false,
     loop:false
 });
+
+/intro lottie애니메이션 클릭 시
 
 $('#link-main').click(function(){
 
@@ -36,6 +42,8 @@ $('#link-main').click(function(){
     }, 4500);
 
 })
+
+// sc-title 영역 스낵 떨어지는 모션
 
 const introTl = gsap.timeline({
     paused:true,
@@ -75,6 +83,8 @@ setTimeout(() => {
     introTl.play()
 }, 5500);
 
+// sc-title 영역 tab버튼 누를 때 스낵종류와 글자 색 바뀜
+
 $('.sc-title .btn-tab-area button').click(function(){
     idx = $(this).data('idx');
     $(`[data-snack="${idx}"]`).addClass('on').siblings().removeClass('on');
@@ -91,6 +101,8 @@ $('.sc-title .btn-tab-area button').click(function(){
     }
 })
 
+//sc-intro img 줄어드는 모션 
+
 gsap.to('.sc-intro .group-img .img-container img',{
     scrollTrigger:{
         trigger:".sc-intro .group-img",
@@ -100,6 +112,8 @@ gsap.to('.sc-intro .group-img .img-container img',{
     },
     scale:1,
 })
+
+// data-scroll-1 값 가진 container의 img data-scroll-1 값 만큼 회전
 
 $('[data-scroll-1]').each(function(i,el){
     gsap.to($(this).find('img'),{
@@ -113,6 +127,8 @@ $('[data-scroll-1]').each(function(i,el){
     })
 })
 
+// data-scroll-2 값 가진 container의 img data-scroll-2 값 만큼 스케일 변화
+
 $('[data-scroll-2]').each(function(i,el){
     gsap.to($(this),{
         scrollTrigger:{
@@ -125,6 +141,7 @@ $('[data-scroll-2]').each(function(i,el){
     })
 })
 
+//가로 스크롤
 
 horiAni = gsap.to('.sect-horizontal .sticky .wrap',{
     scrollTrigger:{
@@ -140,6 +157,8 @@ horiAni = gsap.to('.sect-horizontal .sticky .wrap',{
     },
     ease:'none'
 })
+
+//가로 스크롤 안에서 회전 애니메이션
 
 $('[data-scroll-3]').each(function(i,el){
     gsap.to($(this).find('img'), {
@@ -190,6 +209,8 @@ var swiper3 = new Swiper(".sc-geloof .bottom .swiper", {
       slidesPerView: 5,
 });
 
+//sc-faq영역 아코디언 메뉴
+
 $('.sc-faq .question-area').click(function(){
    
     if($(this).hasClass('on')){
@@ -200,6 +221,8 @@ $('.sc-faq .question-area').click(function(){
     }
 })
 
+//.sc follow영역 img 크기 1로 변하는 애니메이션
+
 gsap.to('.sc-follow .img-wrap .img-container img',{
     scrollTrigger:{
         trigger:".sc-follow .img-wrap",
@@ -209,6 +232,8 @@ gsap.to('.sc-follow .img-wrap .img-container img',{
     },
     scale:1,
 })
+
+// .sc-move .bg-img -16도 돌리는 애니메이션 
 
 gsap.from('.sc-move .bg-img',{
     scrollTrigger:{
