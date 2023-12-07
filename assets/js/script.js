@@ -30,7 +30,7 @@ var animation1 = bodymovin.loadAnimation({
     loop:false
 });
 
-/intro lottie애니메이션 클릭 시
+//intro lottie애니메이션 클릭 시
 
 $('#link-main').click(function(){
 
